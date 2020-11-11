@@ -1,0 +1,52 @@
+// Общие стили для кнопок 
+
+.btn {
+	transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 10px 20px;
+	border-radius: 3px;
+	text-align: center;
+	border: none;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	color: $acuablue;
+	&:hover {
+		text-decoration: none;
+		outline: none;
+	}
+
+	// Стили для кнопок без обводки вариант один 
+
+	&.btn-primary {
+		&:hover {
+			color: darken($acuablue, 10%);
+		}
+	}
+
+	// Стили для кнопок без обводки вариант два 
+
+	&.btn-secondary {
+		background-color: $green;
+		color: #fff;
+
+		&:hover {
+			background-color: $dark-green;
+		}
+	}
+
+	// Стили для кнопок с обводкой вариант один 
+
+	&.btn-outline-primary {
+		background-color: transparent;
+		border: 2px solid $blue;
+		color: $blue;
+
+		&:hover {
+			background-color: $dark-blue;
+			border-color: $dark-blue;
+			color: #fff;
+		}
+	}
+
+}
