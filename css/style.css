@@ -673,6 +673,7 @@ a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: rgba(65, 61, 75, 0.8);
 }
 @media (min-width: 768px) {
   .container .article {
@@ -691,13 +692,11 @@ a:hover {
 .container .logo {
   display: block;
   width: 155px;
-  height: 150px;
   margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   .container .logo {
     width: 235px;
-    height: 230px;
   }
 }
 
