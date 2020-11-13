@@ -19,33 +19,26 @@
 	// Стили для кнопок без обводки вариант один 
 
 	&.btn-primary {
+		padding: 0;
 		&:hover {
 			color: darken($acuablue, 10%);
-		}
-	}
-
-	// Стили для кнопок без обводки вариант два 
-
-	&.btn-secondary {
-		background-color: $green;
-		color: #fff;
-
-		&:hover {
-			background-color: $dark-green;
 		}
 	}
 
 	// Стили для кнопок с обводкой вариант один 
 
 	&.btn-outline-primary {
+		padding: 15px 50px;
 		background-color: transparent;
-		border: 2px solid $blue;
-		color: $blue;
+		border: 2px solid $acuablue;
 
 		&:hover {
-			background-color: $dark-blue;
-			border-color: $dark-blue;
-			color: #fff;
+			background-color: $acuablue;
+			color: lighten($acuablue, 70%);
+		}
+
+		@include media ('>=tablet') {
+			padding: 10px 20px;
 		}
 	}
 

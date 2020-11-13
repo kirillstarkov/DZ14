@@ -1,13 +1,4 @@
-// пример использования media (breakpoints в верху файла)
-body {
-	@include media ('>=tablet') {
-		background-color: #ff0;
-	}
 
-	@include media ('>=desktop') {
-		background-color: tomato;
-	}
-}
 
 .wrapper {
 	overflow: hidden;
@@ -17,7 +8,49 @@ body {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 15px 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include media ('>=tablet') {
+		flex-direction: row;
+		padding: 15px 5%;
+	}
+
+	.article {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		@include media ('>=tablet') {
+			padding: 0 0 0 100px ;
+			display: block;
+		}
+
+		p {
+			margin-bottom: 25px;
+		}
+
+		h4 {
+			color: #413d4b;
+			text-transform: uppercase;
+			margin-bottom: 25px;
+		}
+
+	}
+
+	.logo {
+		display: block;
+		width: 155px;
+		height: 150px;
+		margin-bottom: 10px;
+
+		@include media ('>=tablet') {
+			width: 235px;
+			height: 230px;
+		}
+	}
 }
 
 .slider {
@@ -26,18 +59,16 @@ body {
 	height: 85.6vh;
 	background-size: cover; 
 	background-position: center;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	padding: 80px 20px 80px 20px;
+	color: $white;
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: linear-gradient(to top, #09052f, #311d5e);
-		opacity: 0.7;
+	@include media ('>=tablet') {
+		padding: 80px 100px 80px 100px;
+	}
+
+	@include media ('>=desktop') {
+		padding: 100px 20%;
 	}
 
 	.slick-list {
@@ -48,20 +79,16 @@ body {
 		@extend %height;
 	}
 
-	@include media ('>=tablet') {
-		padding: 80px 100px 80px 100px;
-	}
-
-	@include media ('>=desktop') {
-		padding: 100px 20%;
-	}
-
 	.slick-slide {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.slick-dots {
@@ -91,34 +118,49 @@ body {
 			transition: box-shadow .5s, border .5s;
 
 			&:hover {
-				border: $dotborder;
-				box-shadow: $dots-shadow;
+				@include dots-style-primary;
 			}
 		}
 	}
 
 	.slick-active {
 		button {
-			border: $dotborder;
-			box-shadow: $dots-shadow;
+			@include dots-style-primary;
 		}
-	}
-
-	.separator {
-		margin: 20px 0 30px;
-		width: 50px;
-		height: 1px;
-		background-color: $acuablue;
 	}
 		
 	h1 {
-		margin: 0;
+		margin-bottom: 20px;
 		text-align: center;
 	}
 
 	p {
 		text-align: center;
 		margin-bottom: 65px;
+		padding-top: 20px;
 
+		&::before {
+			content: '';
+			display: block;
+			position: relative;
+			top: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50px;
+			height: 1px;
+			background-color: $acuablue;
+		}
+
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to top, #09052f, #311d5e);
+		opacity: 0.8;
 	}
 }

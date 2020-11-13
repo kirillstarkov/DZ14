@@ -7,6 +7,7 @@
 	list-style: none;
 }
 
+
 // clearfix
 /// @example scss - Usage
 ///   @extend %clearfix;
@@ -35,6 +36,12 @@
 ///   @include triangle(12px, gray, down);
 ///   @include triangle(12px 6px, gray blue, up-left);
 ///
+
+@mixin dots-style-primary {
+	border: solid 1px $acuablue;
+	box-shadow: inset 0 0 20px $acuablue;
+}
+
 @mixin triangle($size, $color, $direction) {
 	$width: nth($size, 1);
 	$height: nth($size, length($size));

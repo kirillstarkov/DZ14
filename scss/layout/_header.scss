@@ -4,34 +4,20 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 15px 0;
+	padding: 15px 10px;
 
 	@include media ('>=tablet') {
-		padding: 15px 80px;
+		padding: 15px 15px;
 		display: flex;
 		justify-content: space-between;
 
-		.header-holder {
-			display: block;
-		}
-
-		.menu {
-			opacity: 1;
-			visibility: visible;
-			display: flex;
-			position: static;
-		}
-
-		.menu-opener {
-			display: none;
-		}
 	}
 
 	@include media ('>=desktop') {
 		padding: 15px 20%;
 	}
 
-	.logo {
+	.hero {
 		width: 128px;
 		height: 50px;
 		display: block;
@@ -43,6 +29,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0;
+
+	@include media ('>=tablet') {
+		display: block;
+	}
 }
 
 .menu-opener {
@@ -53,6 +44,10 @@
 	background-color: $acuablue;
 	position: relative;
 	border-radius: 3px;
+
+	@include media ('>=tablet') {
+		display: none;
+	}
 
 	span,
 	&::before,
@@ -107,6 +102,13 @@
 	opacity: 0;
 	visibility: hidden;
 	transform: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+
+	@include media ('>=tablet') {
+		opacity: 1;
+		visibility: visible;
+		display: flex;
+		position: static;
+	}
 
 	@include media ('<tablet'){
 		a {
