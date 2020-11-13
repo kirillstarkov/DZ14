@@ -692,7 +692,6 @@ a:hover {
 .container .logo {
   display: block;
   width: 155px;
-  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   .container .logo {
@@ -706,7 +705,7 @@ a:hover {
   height: 85.6vh;
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   padding: 80px 20px 80px 20px;
   color: #fff;
 }
@@ -741,15 +740,15 @@ a:hover {
   transform: translateX(-50%);
 }
 .slider .slick-dots li {
-  margin: 10px;
+  margin: 5px;
   font-size: 0;
 }
 .slider .slick-dots button {
   border: solid 1px #fff;
   border-radius: 100%;
   background-color: transparent;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   margin: 0;
   padding: 0;
   cursor: pointer;
